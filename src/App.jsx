@@ -18,10 +18,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <div className="button-count">
-        <Counter/>
-        <br />
-        <br />
-        <Counter/>
+          <Counter />
         </div>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
@@ -36,15 +33,25 @@ function App() {
 
 
 function Counter() {
-  const [count, setCount] = useState(0)
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+
+  const handleClick = () => {
+    setCount1(count1 + 1);
+    setCount2(count2 + 1);
+  };
+
   return (
-
-    <button onClick={() => setCount((count) => count + 1)}>
-      count is {count}
-    </button>
-
-  )
-
+    <div>
+      <div className="counter-box">
+        <p>Counter 1 is {count1}</p>
+        <button onClick={() => setCount1(count1 + 1)}>+</button>
+      </div>
+      <div className="counter-box">
+        <p>Counter 2 is {count2}</p>
+        <button onClick={() => setCount2(count2 + 1)}>+</button>
+      </div>
+    </div>
+  );
 }
-
 export default App
