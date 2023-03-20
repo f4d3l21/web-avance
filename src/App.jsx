@@ -51,6 +51,7 @@ function Counter() {
         <p>Counter 2 is {count2}</p>
         <button onClick={() => setCount2(count2 + 1)}>+</button>
       </div>
+      <button onClick={handleClick}>LES 2 +</button>
     </div>
   );
 }
